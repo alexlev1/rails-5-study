@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Alevashov</title>
+    <title>Руби, рельсы, рок-н-ролл!!!</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="content-wrapper">
+    <div class="navigation">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/"><span>Главная</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span>Обо мне</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span>Услуги</span></a>
+          </li>
+        </ul>
+        <div class="btn">
+          <%= link_to 'Новая статья', new_post_path, class: 'add-post' %>
+        </div>
+    </div>
+    <div class="header">
+        <h1><a href="/">Руби, рельсы, рок-н-ролл!!!</a></h1>
+        <span>Пилю веб-приложения на RoR и пишу об этом)</span>
+    </div>
+    <div class="blog">
+
+        <%= yield %>
+
+    </div>
+    <div class="about">
+          <h3>Об авторе</h3>
+            <!-- <img src="images/ava.jpg"> -->
+          <p>
+              Привет! Меня зовут Александр Левашов. В 30 лет я
+              решил изменить свою жизнь, освоив новую профессию
+              веб-разработчика. На страницах этого блога я рассказываю
+              о том, как иду по этому сложному, но интересному пути.
+          </p>
+    </div>
+    <div class="footer">
+          <p>Alevashov.ru, 2017</p>
+    </div>
+  </div>
   </body>
 </html>
