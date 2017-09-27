@@ -1,11 +1,18 @@
+<% if @post.errors.any? %>
+  <div>
+    <p><%= t('common.errors') %><p>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @post do |f| %>
   <div class="form-control">
     <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-  <div class="form-control">
-    <%= f.label :data %>
-    <%= f.text_field :data %>
   </div>
   <div class="form-control">
     <%= f.label :summary %>

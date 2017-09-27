@@ -33,8 +33,14 @@
         <span>Пилю веб-приложения на RoR и пишу об этом)</span>
     </div>
     <div class="blog">
-
-        <%= yield %>
+      <div class="row">
+        <% flash.each do |name, message|%>
+          <div class="alert alert-<%= name %>">
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+      <%= yield %>
 
     </div>
     <div class="about">
