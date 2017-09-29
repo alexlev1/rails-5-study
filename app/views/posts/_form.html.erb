@@ -14,17 +14,21 @@
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.file_field :image %>
-  </div>
+
   <div class="form-group">
     <%= f.label :summary %>
     <%= f.text_area :summary, class: 'form-control'  %>
   </div>
+
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control'  %>
+    <%= f.trix_editor :body, class: 'editor'  %>
   </div>
+
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+
   <div class="form-group">
     <%= f.submit t('.submit', action: @post.new_record? ? 'Создать' : 'Изменить'), class: 'btn button-add' %>
     <%= link_to t('common.back'), :back, class: 'btn button-back' %>
