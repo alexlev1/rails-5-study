@@ -10,19 +10,20 @@
 <% end %>
 
 <%= form_for @post do |f| %>
-  <div class="form-control">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="form-control">
+  <div class="form-group">
     <%= f.label :summary %>
-    <%= f.text_area :summary %>
+    <%= f.text_area :summary, class: 'form-control'  %>
   </div>
-  <div class="form-control">
+  <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: 'form-control'  %>
   </div>
-  <div class="form-control">
-    <%= f.submit 'Сохранить' %>
+  <div class="form-group">
+    <%= f.submit t('.submit', action: @post.new_record? ? 'Создать' : 'Изменить'), class: 'btn button-add' %>
+    <%= link_to t('common.back'), :back, class: 'btn button-back' %>
   </div>
 <% end %>

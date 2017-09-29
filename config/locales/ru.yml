@@ -1,0 +1,12 @@
+ru:
+  common:
+    errors: 'При заполнении формы возникли ошибки:'
+    back: 'Назад'
+  posts:
+    new:
+      title: "Новая статья"
+    edit:
+      title: "Редактировать статью"
+    form:
+      submit:
+        '%{action} статью'
