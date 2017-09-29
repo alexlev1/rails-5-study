@@ -1,11 +1,1 @@
-<% @posts.reverse.each do |post| %>
-<div class="article">
-    <h2><%= link_to post.title, post_path(post) %></h2>
-    <span><%= post.created_at.to_date.strftime("%d %B, %Y") %></span>
-    <p>
-      <%= image_tag post.image.url(:large), class: 'img-show' if post.image? %>
-      <%= post.summary %>
-    </p>
-    <div class="read-more"><%= link_to 'Читать дальше', post_path(post) %></div>
-</div>
-<% end %>
+<%= render @posts.reverse %>
