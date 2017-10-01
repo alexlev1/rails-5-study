@@ -34,6 +34,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'trix'
 gem 'will_paginate', '~> 3.1.0'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,6 +44,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "letter_opener"
 end
 
 group :development do

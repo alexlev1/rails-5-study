@@ -24,10 +24,25 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><span>Услуги</span></a>
           </li>
+          
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <span><%= link_to 'Новая статья', new_post_path, class: 'nav-link' %></span>
+          </li>
+          <li class="nav-item">
+            <span><%= link_to 'Выход', destroy_user_session_path, method: :delete, class: 'nav-link' %></span>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <span><%= link_to 'Вход', new_user_session_path, class: 'nav-link' %></span>
+          </li>
+          <li class="nav-item">
+            <span><%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link' %></span>
+          </li>
+          <% end %>
+
         </ul>
-        <div class="btn">
-          <%= link_to 'Новая статья', new_post_path, class: 'add-post' %>
-        </div>
+
     </div>
     <div class="header">
         <h1><a href="/">Руби, рельсы, рок-н-ролл!!!</a></h1>
@@ -36,7 +51,8 @@
     <div class="blog">
       <div class="row">
         <% flash.each do |name, message|%>
-          <div class="alert alert-<%= name %>">
+          <div class="alert <%= class_for(name) %>">
+            <button class="close" data-dismiss="alert">&times;</button>
             <%= message %>
           </div>
         <% end %>

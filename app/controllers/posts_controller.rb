@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   before_action :set_post, only: [ :show, :edit, :update, :destroy]
 
@@ -18,7 +19,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, success: 'Пост успешно создан'
     else
-      render :new, danger: 'Статья не создана'
+      flash.now[:danger] = "Статья не создана"
+      render :new
     end
   end
 
@@ -29,7 +31,8 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to @post, success: 'Пост успешно обновлен'
     else
-      render :edit, danger: 'Статья не обновлена'
+      flash.now[:danger] = "Статья не обновлена"
+      render :edit
     end
   end
 
