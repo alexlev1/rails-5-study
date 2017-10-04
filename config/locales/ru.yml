@@ -5,11 +5,12 @@ ru:
   will_paginate:
     previous_label: '&larr; Новые'
     next_label: 'Старые &rarr;'
-  posts:
-    new:
-      title: "Новая статья"
-    edit:
-      title: "Редактировать статью"
-    form:
-      submit:
-        '%{action} статью'
+  admin:
+    posts:
+      new:
+        title: "Новая статья"
+      edit:
+        title: "Редактировать статью"
+      form:
+        submit:
+          '%{action} статью'
